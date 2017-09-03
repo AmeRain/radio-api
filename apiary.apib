@@ -1,0 +1,277 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# radio
+
+
+## Banners Collection [/api/v3/banners]
+
+### List All Banners [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "banners_url": "https://radiovesti.ru/main/",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+              
+            },{
+                "banners_url": "https://radiovesti.ru",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+            }
+        ]
++ Response 204 (application/json)
+
+### Banner [GET /api/v3/banners/{id}]
+
++ Response 200 (application/json)
+
+            {
+                "banners_url": "https://radiovesti.ru/main/",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+              
+            }
+           
+### Create a New Banners [POST]
+
+
++ Request (application/json)
+
+        
+            {
+                "banners_url": "https://radiovesti.ru/main/",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+              
+            }
+        
+        
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /banners/2
+
+    + Body
+
+            {
+                "banners_url": "https://radiovesti.ru/main/",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+              
+            }
+
+###Delete All Banners [DELETE]
+
++ Response 200 (application/json)
+
+###Delete Banner [DELETE /api/v3/banners/{id}]
+
++ Response 200 (application/json)
+
+## Polls Collection [/api/v3/polls]
+
+### List All Polls [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Вопрос",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+            },
+            {
+                "question": "Вопрос2",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+               
+            }
+        ]
++ Response 204 (application/json)
+
+### Poll [GET /api/v3/polls/{id}]
+
++ Response 200 (application/json)
+
+             {
+                "question": "Вопрос",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+            }
+           
+### Create a New Polls [POST]
+
+
++ Request (application/json)
+
+        [
+            {
+                "question": "Вопрос",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+            },
+            {
+                "question": "Вопрос2",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+               
+            }
+        ]
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /polls/2
+
+    + Body
+
+            [
+            {
+                "question": "Вопрос",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+            },
+            {
+                "question": "Вопрос2",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+               
+            }
+            ]
+
+###Edit Poll [PUT /api/v3/polls/{id}]
+
++ Response 200 (application/json)
+
+            {
+                "question": "Вопрос",
+                "answer": [
+                            { "да"
+                            },{
+                            "нет"
+                            }
+              ]
+               
+            }
+
++ Response 400 (application/json)
+            
+###Delete All Polls [DELETE]
+
++ Response 200 (application/json)
+
+###Delete Poll [DELETE /api/v3/polls/{id}]
+
++ Response 200 (application/json)            
+
+            
+## Pushes Collection [/api/v3/pushes]
+
+### List All Pushes [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "text": "Уведомление",
+            "date": "2015-08-05T08:40:51.620Z"
+            },
+            {
+            "text": "Уведомление2",
+            "date": "2015-09-05T08:40:51.620Z"
+            }
+        ]
++ Response 204 (application/json)
+
+### Push [GET /api/v3/pushes/{id}]
+
++ Response 200 (application/json)
+
+            {
+            "text": "Уведомление",
+            "date": "2015-08-05T08:40:51.620Z"
+            }
+           
+### Create a New Pushes [POST]
+
+
++ Request (application/json)
+
+        [
+            {
+            "text": "Уведомление",
+            "date": "2015-08-05T08:40:51.620Z"
+            },
+            {
+            "text": "Уведомление2",
+            "date": "2015-09-05T08:40:51.620Z"
+            }
+        ]
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /pushes/2
+
+    + Body
+
+            [
+            {
+            "text": "Уведомление",
+            "date": "2015-08-05T08:40:51.620Z"
+            },
+            {
+            "text": "Уведомление2",
+            "date": "2015-09-05T08:40:51.620Z"
+            }
+            ]
+
+###Edit Push [PUT /api/v3/pushes/{id}]
+
++ Response 200 (application/json)
+
+            {
+            "text": "Уведомление",
+            "date": "2015-08-05T08:40:51.620Z"
+            }
+
++ Response 400 (application/json)
+
+
+###Delete Push [DELETE /api/v3/pushes/{id}]
+
++ Response 200 (application/json)   
+
+###Delete All Pushes [DELETE /api/v3/pushes]
+
++ Response 200 (application/json)
