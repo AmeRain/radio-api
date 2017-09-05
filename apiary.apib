@@ -4,7 +4,7 @@ HOST: http://polls.apiblueprint.org/
 # radio
 
 
-## Banners Collection [/api/v3/banners]
+## Banners Collection [/api/v3/banners?all=true]
 
 ### List All Banners [GET]
 
@@ -15,18 +15,32 @@ HOST: http://polls.apiblueprint.org/
                 "uuid":"0c47fdea-e12c-483b-b428-38400fa3e884",
                 "path":"D:/",
                 "url": "https://radiovesti.ru/main/",
-                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
-              
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "false"
             },{
                 "uuid":"0c47fdea-e12d-483b-b428-38400fa3e884",
                 "path":"D:/",
                 "url": "https://radiovesti.ru/main/",
-                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "true"
               }
         ]
 + Response 204 (application/json)
 
-### Banner [GET /api/v3/banners/{id}]
+### Actual Banners [/api/v3/banners?all=false]
+
++ Response 200 (application/json)
+
+              {
+                "uuid":"0c47fdea-e12d-483b-b428-38400fa3e884",
+                "path":"D:/",
+                "url": "https://radiovesti.ru/main/",
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "true"
+              }
++ Response 204 (application/json)
+
+### Banner [GET /api/v3/banners/{uuid}]
 
 + Response 200 (application/json)
 
@@ -34,7 +48,8 @@ HOST: http://polls.apiblueprint.org/
                 "uuid":"0c47fdea-e12d-483b-b428-38400fa3e884",
                 "path":"D:/",
                 "url": "https://radiovesti.ru/main/",
-                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "true"
               }
            
 ### Create a New Banners [POST]
@@ -47,7 +62,8 @@ HOST: http://polls.apiblueprint.org/
                 "uuid":"0c47fdea-e12d-483b-b428-38400fa3e884",
                 "path":"D:/",
                 "url": "https://radiovesti.ru/main/",
-                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "true"
               }
         
         
@@ -64,7 +80,8 @@ HOST: http://polls.apiblueprint.org/
                 "uuid":"0c47fdea-e12d-483b-b428-38400fa3e884",
                 "path":"D:/",
                 "url": "https://radiovesti.ru/main/",
-                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+                "image_url": "https://yt3.ggpht.com/-6aiMUHnVUO8/AAAAAAAAAAI/AAAAAAAAAAA/AfXTQGCHKJM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "relevance": "true"
               }
 
 ###Delete All Banners [DELETE]
